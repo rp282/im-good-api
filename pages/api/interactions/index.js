@@ -6,7 +6,6 @@ import {
     MessageComponentTypes,
     ButtonStyleTypes,
   } from 'discord-interactions';
-
 export default function handler(req, res) {
     console.log({req})
     
