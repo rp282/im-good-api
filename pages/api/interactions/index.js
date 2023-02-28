@@ -11,9 +11,9 @@ export default function handler(req, res) {
     console.log({req})
     
     const { type, id, data } = JSON.parse(req.body);
-    
+
     if (type === InteractionType.PING) {
-        return res.send({ type: InteractionResponseType.PONG });
+        return res.send({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY), type: InteractionResponseType.PONG });
     }
     
     if (type === InteractionType.APPLICATION_COMMAND) {
@@ -28,6 +28,7 @@ export default function handler(req, res) {
               // Fetches a random emoji to send from a helper function
               content: `I'm good.`,
             },
+            verify: VerifyDiscordRequest(process.env.PUBLIC_KEY)
           });
         }
       }
