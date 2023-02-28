@@ -7,9 +7,8 @@ import {
     ButtonStyleTypes,
   } from 'discord-interactions';
 export default function handler(req, res) {
-    console.log({req})
     
-    const { type, id, data } = JSON.parse(req.body);
+    const { type, id, data } = req.body;
 
     if (type === InteractionType.PING) {
         return res.send({type: InteractionResponseType.PONG, verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) })
