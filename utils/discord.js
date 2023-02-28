@@ -21,7 +21,7 @@ export async function DiscordRequest(endpoint, options) {
     // Use node-fetch to make requests
     const res = await fetch(url, {
       headers: {
-        Authorization: `Bot ${process.env.TOKEN}`,
+        Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
         'Content-Type': 'application/json; charset=UTF-8',
         'User-Agent': 'DiscordBot (https://github.com/rp282/im-good-api, 1.0.0)'
       },
