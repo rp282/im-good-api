@@ -13,7 +13,7 @@ export default function handler(req, res) {
     const { type, id, data } = JSON.parse(req.body);
 
     if (type === InteractionType.PING) {
-        return res.send({type: InteractionResponseType.PONG }).json({verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) });
+        return res.send({type: InteractionResponseType.PONG, verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) })
     }
     
     if (type === InteractionType.APPLICATION_COMMAND) {
