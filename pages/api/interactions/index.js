@@ -10,11 +10,12 @@ import {
 export default function handler(req, res) {
     console.log({req})
     
+    const { type, id, data } = JSON.parse(req.body);
+    
     if (type === InteractionType.PING) {
         return res.send({ type: InteractionResponseType.PONG });
     }
     
-    const { type, id, data } = JSON.parse(req.body);
     if (type === InteractionType.APPLICATION_COMMAND) {
         const { name } = data;
     
