@@ -2,6 +2,7 @@
 import { DiscordRequest } from '../utils/discord';
 
 export async function HasGuildCommands(appId, guildId, commands) {
+    console.log('running hasguildcommands', {appId, guildId, commands})
     if (guildId === '' || appId === '') return;
   
     commands.forEach((c) => HasGuildCommand(appId, guildId, c));
