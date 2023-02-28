@@ -6,9 +6,13 @@ import {
     MessageComponentTypes,
     ButtonStyleTypes,
   } from 'discord-interactions';
-  
+
 export default function handler(req, res) {
     console.log({req})
+    
+    if (type === InteractionType.PING) {
+        return res.send({ type: InteractionResponseType.PONG });
+    }
     
     const { type, id, data } = JSON.parse(req.body);
     if (type === InteractionType.APPLICATION_COMMAND) {
